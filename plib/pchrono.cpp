@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include "pchrono.h"
 
 using namespace std;
@@ -38,5 +38,5 @@ void PChrono::print() {
   }
 
 	long long microseconds = chrono::duration_cast<chrono::microseconds>(delta).count();
-  cout << "[PChrono] : " << _name << " total run time : " << microseconds << "μs" << "   --->   " << microseconds/1000.0f << "ms" << "   --->   " << (microseconds / 1000000.0f) << "s" << std::endl;
+  std::println("[PChrono] : {}  total run time : {}μs   --->   {}ms   --->   {:9f}s", _name, microseconds, microseconds/1000.0f, microseconds / 1000000.0f);
 }
