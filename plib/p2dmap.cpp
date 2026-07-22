@@ -25,6 +25,12 @@ P2DMap::P2DMap(char* rawdata, u64 size, char bufferchar) {
         }
     }
 
+    // If data doesn't end in a new line
+    if(map[size-1] != '\n') {
+        h++;
+    }
+
+
     if(bufferchar != 0) {
         w += 2;
         h += 2;
