@@ -42,3 +42,26 @@ u64 uint_at(const char* data, u64* idx) {
         }
     }
 }
+
+i64 int_at(const char* data, u64* idx) {
+    i64 work = 0;
+    char c;
+
+		i64 sign = 1;
+
+		if(data[*idx] == '-') {
+			sign = -1;
+      (*idx)++;
+		}
+
+    while(true) {
+        c = data[*idx];
+        if(c >= '0' && c <= '9') {
+            (*idx)++;
+            work *= 10;
+            work += (c - '0');
+        } else {
+            return work*sign;
+        }
+    }
+}

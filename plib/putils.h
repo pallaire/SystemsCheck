@@ -13,3 +13,4 @@ using namespace std;
 vector<u64> splitStringToVectorU64(const string& s);
 
 u64 uint_at(const char* data, u64* idx);
+i64 int_at(const char* data, u64* idx);
